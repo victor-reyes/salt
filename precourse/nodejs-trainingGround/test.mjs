@@ -1,6 +1,7 @@
 import assert from "assert";
 import { getAge, getAgeGroup } from "./index.mjs";
 import { log } from "console";
+import { describe } from "mocha";
 
 describe("age calculator", () => {
   it("someone born 1972 is 50 2022", () => {
@@ -74,7 +75,23 @@ describe("age classifier", () => {
 
   it("Should throw an exception, if the age is negative", () => {
     assert.throws(() => {
-      getAgeGroup(-1)
-    })
+      getAgeGroup(-1);
+    });
+  });
+});
+
+describe("Playing with arrays", () => {
+  it("removing elements from the beginning using splice", () => {
+    // arrange
+    const names = ["Marcus", "Eliza", "Obaid", "Arvid"];
+    assert.equal(names.length, 4);
+
+    // act
+    names.splice(0, 1);
+
+    // arrange
+    assert.equal(names.length, 3);
+    assert.equal(names[3], undefined);
+    assert.equal(names[0], "Eliza")
   });
 });
