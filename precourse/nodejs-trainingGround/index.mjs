@@ -13,3 +13,9 @@ export const getAgeGroup = age => {
 };
 
 export const getAgeForPerson = (person, currentYear) => currentYear - person.birthYear;
+
+export const divideIt = (firstNum, secondeNum) => {
+  if (secondeNum === 0) throw new Error("Division by 0 is undefined");
+
+  return firstNum / secondeNum;
+};

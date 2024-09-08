@@ -1,8 +1,6 @@
 import assert from "assert";
-import { getAge, getAgeGroup, getAgeForPerson } from "./index.mjs";
+import { getAge, getAgeGroup, getAgeForPerson, divideIt } from "./index.mjs";
 import { describe } from "mocha";
-import { title } from "process";
-import { release } from "os";
 
 describe("age calculator", () => {
   it("someone born 1972 is 50 2022", () => {
@@ -152,9 +150,18 @@ describe("Objects", () => {
       },
     ];
 
-    assert.equal(people.length, 2)
-    assert.equal(people[1].name, "Frodo")
-    assert.equal(people[1].favoriteMovies[0].title, "The Hobbit: An Unexpected Journey")
-
+    assert.equal(people.length, 2);
+    assert.equal(people[1].name, "Frodo");
+    assert.equal(people[1].favoriteMovies[0].title, "The Hobbit: An Unexpected Journey");
   });
+});
+
+describe("Exceptions", () => {
+  it("division", () => {
+    const result = divideIt(8, 10);
+
+    assert.equal(result, 0.8);
+  });
+
+  it("division by zero", () => assert.throws(() => divideIt(1, 0)));
 });
