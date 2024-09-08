@@ -1,9 +1,9 @@
 {
   "name": "nodejs-trainingground",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "mocha test.mjs"
   },
   "keywords": [],
   "author": "",
