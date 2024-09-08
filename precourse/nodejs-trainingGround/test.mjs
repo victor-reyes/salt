@@ -1,7 +1,8 @@
 import assert from "assert";
-import { getAge, getAgeGroup } from "./index.mjs";
-import { log } from "console";
+import { getAge, getAgeGroup, getAgeForPerson } from "./index.mjs";
 import { describe } from "mocha";
+import { title } from "process";
+import { release } from "os";
 
 describe("age calculator", () => {
   it("someone born 1972 is 50 2022", () => {
@@ -92,6 +93,68 @@ describe("Playing with arrays", () => {
     // arrange
     assert.equal(names.length, 3);
     assert.equal(names[3], undefined);
-    assert.equal(names[0], "Eliza")
+    assert.equal(names[0], "Eliza");
+  });
+});
+
+describe("Objects", () => {
+  it("get age for person", () => {
+    // arrange
+    const currentYear = 2022;
+    const person = {
+      name: "Marcus",
+      birthYear: 1972,
+      isTeacher: true,
+    };
+
+    // act
+    const age = getAgeForPerson(person, currentYear);
+
+    // assert
+    assert.equal(age, 50);
+  });
+
+  it("array of people with favorite movies", () => {
+    const people = [
+      {
+        name: "Aragorn",
+        favoriteMovies: [
+          {
+            title: "The Lord of the Rings: The Fellowship of the Ring",
+            releaseYear: 2001,
+          },
+          {
+            title: "The Lord of the Rings: The Two Towers",
+            releaseYear: 2002,
+          },
+          {
+            title: "The Lord of the Rings: The Return of the King",
+            releaseYear: 2003,
+          },
+        ],
+      },
+      {
+        name: "Frodo",
+        favoriteMovies: [
+          {
+            title: "The Hobbit: An Unexpected Journey",
+            releaseYear: 2012,
+          },
+          {
+            title: "The Hobbit: The Desolation of Smaug",
+            releaseYear: 2013,
+          },
+          {
+            title: "The Hobbit: The Battle of the Five Armies",
+            releaseYear: 2014,
+          },
+        ],
+      },
+    ];
+
+    assert.equal(people.length, 2)
+    assert.equal(people[1].name, "Frodo")
+    assert.equal(people[1].favoriteMovies[0].title, "The Hobbit: An Unexpected Journey")
+
   });
 });
