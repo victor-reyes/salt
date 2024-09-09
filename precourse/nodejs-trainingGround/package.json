@@ -11,5 +11,8 @@
   "description": "",
   "devDependencies": {
     "mocha": "^10.7.3"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
   }
 }
