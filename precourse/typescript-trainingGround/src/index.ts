@@ -57,6 +57,23 @@ const optionallyAdd = (num1: number, num2: number, num3: number = 0, num4: numbe
 
 const greetPeople = (greeting: string, ...names: string[]) => `${greeting} ${names.join(' and ')}`.trim();
 
+const addToStart = <T>(list: T[], ...itemsToAdd: T[]) => [...itemsToAdd, ...list];
+
+class Wrapper<T> {
+  private list: T[];
+
+  constructor(list: T[]) {
+    this.list = list;
+  }
+
+  public getFirst(): T {
+    return this.list[0];
+  }
+  public getLast(): T {
+    return this.list[this.list.length - 1];
+  }
+}
+
 export {
   greet,
   isOld as isOldPerson,
@@ -72,4 +89,6 @@ export {
   printThis,
   optionallyAdd,
   greetPeople,
+  addToStart,
+  Wrapper,
 };
