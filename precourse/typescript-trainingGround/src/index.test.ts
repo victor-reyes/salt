@@ -1,6 +1,6 @@
 import 'mocha';
 import assert from 'assert';
-import { greet, isOld, countOdd, sumEven, Person, getPersonStreetNo } from './index';
+import { greet, isOld, countOdd, sumEven, Person, getPersonStreetNo, EmployeeClass, PersonClass } from './index';
 
 describe('ts tests', () => {
   it('get greeting', () => {
@@ -90,4 +90,19 @@ describe('ts tests', () => {
     // assert
     assert.strictEqual(streetNo, 23);
   });
+
+  it("using classes", () => {
+    // arrange
+    const p = new PersonClass("Marcus", 1972);
+    const e = new EmployeeClass("Marcus Employee", 1972);
+  
+    // act
+    e.employeeId = 12345;
+  
+    // assert
+    assert.strictEqual(p.getName(), "Marcus");
+    assert.strictEqual(e.getName(), "Marcus Employee");
+    assert.strictEqual(e.employeeId, 12345);
+  });
+  
 });
