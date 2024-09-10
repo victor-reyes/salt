@@ -51,8 +51,8 @@ const getPersonNameString = (person: IPerson) => `${person.name}, ${person.birth
 
 const printThis = (p: Person | null | undefined) => (p === null || p === undefined ? 'no person supplied' : p.name);
 
-const optionallyAdd = (num1: number, num2: number, num3?: number, num4?: number, num5?: number) => {
-  return num1 + num2 + (num3 ?? 0) + (num4 ?? 0) + (num5 ?? 0);
+const optionallyAdd = (num1: number, num2: number, num3: number = 0, num4: number = 0, num5: number = 0) => {
+  return num1 + num2 + num3 + num4 + num5;
 };
 
 export {
