@@ -55,6 +55,8 @@ const optionallyAdd = (num1: number, num2: number, num3: number = 0, num4: numbe
   return num1 + num2 + num3 + num4 + num5;
 };
 
+const greetPeople = (greeting: string, ...names: string[]) => `${greeting} ${names.join(' and ')}`.trim();
+
 export {
   greet,
   isOld,
@@ -69,4 +71,5 @@ export {
   getPersonNameString,
   printThis,
   optionallyAdd,
+  greetPeople,
 };
