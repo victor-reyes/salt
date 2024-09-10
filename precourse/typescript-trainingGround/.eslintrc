@@ -1,6 +1,9 @@
 {
-    "extends": "salt-typescript",
-    "parserOptions": {
-      "project": "tsconfig.json"
-    }
+  "extends": "salt-typescript",
+  "parserOptions": {
+    "project": "tsconfig.json"
+  },
+  "rules": {
+    "max-classes-per-file": "off"
   }
+}
