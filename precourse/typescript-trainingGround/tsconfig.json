@@ -4,7 +4,9 @@
     "moduleResolution": "NodeNext",
     "sourceMap": true,
     "target": "ES2015",
-    "outDir": "dist"
+    "outDir": "dist",
+
+    "strictNullChecks": true
   },
   "include": ["src/**/*"]
 }
