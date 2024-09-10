@@ -50,6 +50,25 @@ class EmployeeClass extends PersonClass {
   employeeId: number = -1;
 }
 
+interface IPerson {
+  name: string;
+  birthYear: number;
+}
+
+function getPersonNameString(person: IPerson) {
+  return `${person.name}, ${person.birthYear}`;
+}
+
 export {
-  greet, isOld, countOdd, sumEven, Person, Address, getPersonStreetNo, PersonClass, EmployeeClass,
+  greet,
+  isOld,
+  countOdd,
+  sumEven,
+  Person,
+  Address,
+  getPersonStreetNo,
+  PersonClass,
+  EmployeeClass,
+  IPerson,
+  getPersonNameString,
 };
