@@ -3,7 +3,7 @@ const greet = (name: string, birthYear: number) => {
   return `Hello, ${name}, you are ${age} years old`;
 };
 
-const isOld = (age: number) => age >= 35;
+export const isOld = (age: number) => age >= 35;
 
 const countOdd = (numbers: Array<number>) => numbers.filter(n => n % 2 !== 0).length;
 
@@ -59,7 +59,7 @@ const greetPeople = (greeting: string, ...names: string[]) => `${greeting} ${nam
 
 export {
   greet,
-  isOld,
+  isOld as isOldPerson,
   countOdd,
   sumEven,
   Person,

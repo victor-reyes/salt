@@ -1,8 +1,9 @@
 import 'mocha';
-import assert from 'assert';
+import * as assert from 'assert';
 import {
   greet,
   isOld,
+  isOldPerson,
   countOdd,
   sumEven,
   Person,
