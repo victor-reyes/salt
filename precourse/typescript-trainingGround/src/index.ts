@@ -51,6 +51,10 @@ const getPersonNameString = (person: IPerson) => `${person.name}, ${person.birth
 
 const printThis = (p: Person | null | undefined) => (p === null || p === undefined ? 'no person supplied' : p.name);
 
+const optionallyAdd = (num1: number, num2: number, num3?: number, num4?: number, num5?: number) => {
+  return num1 + num2 + (num3 ?? 0) + (num4 ?? 0) + (num5 ?? 0);
+};
+
 export {
   greet,
   isOld,
@@ -64,4 +68,5 @@ export {
   IPerson,
   getPersonNameString,
   printThis,
+  optionallyAdd,
 };
