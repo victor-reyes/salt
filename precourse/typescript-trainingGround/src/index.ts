@@ -1,19 +1,13 @@
-function greet(name: string, birthYear: number): string {
+const greet = (name: string, birthYear: number) => {
   const age = new Date().getFullYear() - birthYear;
   return `Hello, ${name}, you are ${age} years old`;
-}
+};
 
-function isOld(age: number) {
-  return age >= 35;
-}
+const isOld = (age: number) => age >= 35;
 
-function countOdd(numbers: Array<number>) {
-  return numbers.filter(n => n % 2 !== 0).length;
-}
+const countOdd = (numbers: Array<number>) => numbers.filter(n => n % 2 !== 0).length;
 
-function sumEven(numbers: Array<number>) {
-  return numbers.filter(n => n % 2 === 0).reduce((prev, curr) => prev + curr, 0);
-}
+const sumEven = (numbers: Array<number>) => numbers.filter(n => n % 2 === 0).reduce((prev, curr) => prev + curr, 0);
 
 type Address = {
   street: string;
@@ -27,9 +21,7 @@ type Person = {
   address: Address;
 };
 
-function getPersonStreetNo(person: Person) {
-  return person.address.streetNo;
-}
+const getPersonStreetNo = (person: Person) => person.address.streetNo;
 
 class PersonClass {
   private name: string;
@@ -55,16 +47,9 @@ interface IPerson {
   birthYear: number;
 }
 
-function getPersonNameString(person: IPerson) {
-  return `${person.name}, ${person.birthYear}`;
-}
+const getPersonNameString = (person: IPerson) => `${person.name}, ${person.birthYear}`;
 
-function printThis(p: Person | null | undefined) {
-  if (p === null || p === undefined) {
-    return 'no person supplied';
-  }
-  return p.name;
-}
+const printThis = (p: Person | null | undefined) => (p === null || p === undefined ? 'no person supplied' : p.name);
 
 export {
   greet,
