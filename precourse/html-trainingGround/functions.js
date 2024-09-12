@@ -1,4 +1,10 @@
-function getCompanyName() {
-  return 'Salt';
-}
-console.log('salt> Functions loaded');
+const myFunctions = {
+  getCompanyName: function () {
+    return 'SALT';
+  },
+};
+
+const companyName = myFunctions.getCompanyName();
+document.getElementsByTagName('div')[1].innerHTML = companyName;
+
+document.getElementById('companyName').innerHTML = companyName;
