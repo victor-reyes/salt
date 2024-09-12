@@ -9,7 +9,7 @@ const addStyle = selector => {
 };
 
 const invertColorsOfResults = () => {
-  const mainResultElements = document.querySelectorAll('.mainResult').forEach(element => {
+  document.querySelectorAll('.mainResult').forEach(element => {
     if (element.classList.contains('positiveResult')) {
       element.classList.remove('positiveResult');
       element.classList.add('negativeResult');
