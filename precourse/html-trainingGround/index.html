@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>SALT HTML Training Ground</title>
+    <title>JavaScript training ground</title>
+    <script>
+      console.log('salt> In the head');
+      const name = getCompanyName();
+      console.log(`salt> In the head. Company name is ${name}`);
+    </script>
   </head>
   <body>
-    <h1>Let's do it!</h1>
-    <main>
-      <div>Content 1</div>
-      <div class="relative">Content 2</div>
-      <div class="fixed">Content 3</div>
-      <div class="absolute">Content 4</div>
-      <div class="sticky">Content 5</div>
-    </main>
+    <script>
+      console.log('salt> Start of body');
+      function getCompanyName() {
+        return 'SALT';
+      }
+    </script>
+    <main>...</main>
+    <script>
+      console.log(`salt> End of body. Company name is ${getCompanyName()}`);
+    </script>
   </body>
 </html>
