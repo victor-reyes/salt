@@ -5,14 +5,13 @@ const myFunctions = {
 };
 
 const companyName = myFunctions.getCompanyName();
-document.getElementsByTagName('div')[1].innerHTML = companyName;
 
-document.getElementById('companyName').innerHTML = companyName;
+const companyNameElement = document.querySelector('#companyName');
+companyNameElement.innerHTML = companyName + ' set using a query selector by id';
 
-const boldNodes = document.getElementsByClassName('bold');
-
+const boldNodes = document.querySelectorAll('.bold');
 for (let i = 0; i < boldNodes.length; i++) {
-  boldNodes[i].innerHTML += ' ... and bold';
+  boldNodes[i].innerHTML += ' ... and bold selected with query';
 }
 
-const contentNodes = document.getElementsByName('content').forEach(node => (node.innerHTML += '.   Lorem content'));
+document.querySelectorAll('[name="content"]').forEach(node => (node.innerHTML += '.   Lorem content'));
