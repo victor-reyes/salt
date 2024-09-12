@@ -1,35 +1,12 @@
-main {
-  border: solid 1px;
-  margin: 8px;
-  padding: 8px;
-  background-color: cadetblue;
-  height: 8000px;
-  width: 8000px;
+.mainResult {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 80px;
 }
-div {
-  margin: 4px;
-  background-color: rebeccapurple;
-  width: fit-content;
-  border: 1px solid black;
-  padding: 8px;
+.negativeResult {
+  background-color: red;
+  color: white;
 }
-.relative {
-  position: relative;
-  top: 0px;
-  left: 0px;
-}
-.fixed {
-  position: fixed;
-  top: 0px;
-  right: 0px;
-}
-.absolute {
-  position: absolute;
-  top: 0px;
-  left: 250px;
-}
-.sticky {
-    position: sticky;
-    top: 16px;
-    left: 16px
+.positiveResult {
+  background-color: green;
+  color: white;
 }
