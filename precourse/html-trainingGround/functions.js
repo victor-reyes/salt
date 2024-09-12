@@ -26,4 +26,9 @@ function addListInMain(numberOfItems) {
   }
 }
 
+function removeDivBy(id){
+  document.querySelector(`div#${id}`)?.remove()
+}
+
 addListInMain(4);
+removeDivBy('content3')
