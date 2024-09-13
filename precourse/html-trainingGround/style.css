@@ -10,3 +10,19 @@
   background-color: green;
   color: white;
 }
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+body,
+main {
+  padding: 16px;
+}
