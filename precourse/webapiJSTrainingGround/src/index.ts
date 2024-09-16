@@ -35,7 +35,7 @@ app.post('/api/developers/', (req, res) => {
 
   const newDev = { id, name, email };
   db.push(newDev);
-  res.status(201).set('location', `/api/developers/${id}`).json(newDev);
+  return res.status(201).set('location', `/api/developers/${id}`).json(newDev);
 });
 
 app.delete('/api/developers/:id', ({ params: { id } }, res) => {
@@ -44,6 +44,25 @@ app.delete('/api/developers/:id', ({ params: { id } }, res) => {
   res.status(dev ? 204 : 404).end();
 });
 
+app.patch('/api/developers/:id', (req, res) => {
+  const { id } = req.params;
+  const { name, email }: { name?: string; email?: string } = req.body;
+
+  if (!name && !email) return res.status(400).end();
+
+  const index = db.findIndex(dev => dev.id === Number(id));
+
+  if (index === -1) return res.status(404).end();
+
+  const updatedDev = {
+    ...db[index],
+    ...(name && { name }),
+    ...(email && { email }),
+  };
+
+  db[index] = updatedDev;
+  return res.status(200).set('location', `/api/developers/${id}`).json(updatedDev);
+});
 
 const port = 3000;
 app.listen(port, () => {
