@@ -29,7 +29,10 @@ app.get('/api/developers/:id', (req, res) => {
 
 app.post('/api/developers/', (req, res) => {
   const id = Math.max(0, ...db.map(dev => dev.id)) + 1;
-  const { name, email } = req.body;
+  const { name, email }: { name?: string; email?: string } = req.body;
+
+  if (!name || !email) return res.status(400).end();
+
   const newDev = { id, name, email };
   db.push(newDev);
   res.status(201).set('location', `/api/developers/${id}`).json(newDev);
@@ -40,6 +43,7 @@ app.delete('/api/developers/:id', ({ params: { id } }, res) => {
   db = db.filter(d => d !== dev);
   res.status(dev ? 204 : 404).end();
 });
+
 
 const port = 3000;
 app.listen(port, () => {
