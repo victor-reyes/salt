@@ -1,9 +1,12 @@
 import http from 'http';
+import fs from 'fs';
 
 const server = http.createServer((_req, res) => {
+  const content = fs.readFileSync('./static/index.html', 'utf-8');
+
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
-  res.end('<h1>Hello fellow developer!</h1>');
+  res.end(content);
 });
 
 const hostname = 'localhost';
