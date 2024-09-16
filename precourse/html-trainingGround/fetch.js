@@ -1,22 +1,20 @@
 let allUsers;
-let users;
 
 const getUsers = async () => {
   const response = await fetch('https://randomuser.me/api/?gender=female&results=30');
   const json = await response.json();
-  console.log(json);
-  allUsers = users = json.results;
+  return json.results;
 };
 
-const filterData = async name => {
+const filterUsers = async (users, name) => {
   console.log(name);
   name = name.toLowerCase();
-  users = allUsers.filter(
+  return users.filter(
     user => user.name.first.toLowerCase().includes(name) || user.name.last.toLowerCase().includes(name)
   );
 };
 
-const showUsers = async () => {
+const showUsers = async users => {
   const main = document.querySelector('main');
   main.childNodes.forEach(node => node.remove());
 
@@ -45,13 +43,16 @@ const showUsers = async () => {
   main.appendChild(userList);
 };
 
-getUsers().then(() => showUsers());
+getUsers().then(users => {
+  allUsers = users;
+  showUsers(users);
+});
 
 const filterForm = document.getElementById('filterForm');
 filterForm.addEventListener('submit', async event => {
   event.preventDefault(); // Prevent page refresh on form submit
 
   const filterValue = document.getElementById('filter').value;
-  await filterData(filterValue);
-  await showUsers();
+  const filteredUsers = await filterUsers(allUsers, filterValue);
+  await showUsers(filteredUsers);
 });
