@@ -1,10 +1,11 @@
 import express from 'express';
+import morgan from 'morgan';
 
 const app = express();
-
-const futureDev = { id: 1, name: 'Víctor Reyes', email: 'victor.reyes@salt.dev' };
+app.use(morgan('tiny'));
+app.use(express.static('static'));
 app.get('/', (req, res) => {
-  res.status(201).set('location', '/api/developers/1').json(futureDev);
+  res.send('Hello fellow developer!');
 });
 
 const port = 3000;
