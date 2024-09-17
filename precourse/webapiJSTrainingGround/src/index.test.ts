@@ -27,4 +27,20 @@ describe('developer API should have endpoints to', () => {
       })
       .expect(200, done);
   });
+
+  it('post a developer', done => {
+    const [name, email] = ['John', 'john@salt.dev'];
+    request(app)
+      .post('/api/developers/')
+      .set('Accept', 'application/json')
+      .send({ name, email })
+      .expect('Content-Type', /json/)
+      .expect('location', /\/api\/developers\/\d+/)
+      .expect(res => {
+        assert.strictEqual(res.body.name, name);
+        assert.strictEqual(res.body.email, email);
+        assert.strictEqual(typeof res.body.id, 'number');
+      })
+      .expect(201, done);
+  });
 });
