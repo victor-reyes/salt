@@ -43,4 +43,12 @@ describe('developer API should have endpoints to', () => {
       })
       .expect(201, done);
   });
+
+  it('delete a developer by id', done => {
+    request(app).delete('/api/developers/1').set('Accept', 'application/json').expect(204, done);
+  });
+
+  it("delete a developer by id that doesn't exist", done => {
+    request(app).delete('/api/developers/4').set('Accept', 'application/json').expect(404, done);
+  });
 });
