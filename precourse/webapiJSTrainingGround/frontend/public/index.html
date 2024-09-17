@@ -2,29 +2,21 @@
 <html lang="en">
   <head>
     <title>Frontend for DEV API</title>
+    <link rel="stylesheet" href="style.css" />
     <script type="module" defer src="index.js"></script>
   </head>
   <body>
     <main>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ab eligendi ad nostrum sint incidunt
-        libero, quis quisquam, dolore dicta dolorum sequi ipsa accusamus quae tenetur deserunt quas mollitia velit
-        architecto exercitationem at?
-      </div>
-      <div>
-        Laudantium quae sunt rerum vitae. Debitis expedita veritatis aperiam possimus ducimus consequatur iste
-        consectetur a accusantium animi! Incidunt accusantium veritatis sint blanditiis, laborum nam. Pariatur fugiat ab
-        explicabo iste veritatis esse nemo voluptate.
-      </div>
-      <div>
-        Pariatur id dolorem illum fugiat quidem rem nam dolorum ullam corrupti accusamus ab totam tempore commodi quos
-        aliquam voluptates praesentium sapiente asperiores sed dolor repellendus, quia ex. Aperiam non labore ipsa
-        recusandae accusantium.
-      </div>
-      <div>
-        Cupiditate mollitia, adipisci repudiandae, fuga delectus cum eos pariatur facere beatae voluptas molestiae vel
-        iste id, doloremque quisquam dolores temporibus deleniti! Dicta, necessitatibus voluptates nostrum est tempore
-        fuga tempora adipisci amet ipsam dolore.
+      <h3>Current developers:</h3>
+      
+      <div id="dev-holder"></div>
+
+      <button id="add-dev-button">Add Developer</button>
+
+      <div id="add-dev-form" style="display: none">
+        <input id="dev-name-input" placeholder="Developer Name" />
+        <input id="dev-email-input" placeholder="Developer Email" />
+        <button id="save-dev-button">Save</button>
       </div>
     </main>
   </body>
